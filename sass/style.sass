@@ -1,0 +1,121 @@
+// out: ../css/
+
+// Custom variables
+$font-size: 16px
+$color-main-light: #008080
+$color-main-dark: #8A2BE2
+$color-secondary-light: #eee
+$color-secondary-dark: #555
+
+// Custom properties
+html, body
+	font-size: $font-size
+	margin: 0
+	padding: 0
+	*
+		font-size: $font-size
+		font-family: 'Roboto', sans-serif
+		letter-spacing: 0.3px
+		box-sizing: border-box
+
+section
+	width: 100%
+
+.container
+	width: 1200px
+	margin: 0 auto
+
+section#nav
+	box-shadow: 0 2px 5px 0 $color-secondary-dark
+	background-color: $color-main-light
+
+	form#options
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 2rem 0
+
+		input#query
+			width: 25rem
+			padding: 0.9rem
+			border: 2px solid transparent
+			border-radius: 0.4rem
+			transition: all 0.2s ease
+			&:focus
+				box-shadow: -2px -2px 1px 0 $color-secondary-dark
+				outline: none
+
+		#selectWrapper
+			label
+				font-weight: 500
+				color: $color-secondary-light
+			select#itemsCount
+				padding: 0.5rem
+				border: 1px solid transparent
+				border-radius: 0.4rem
+				transition: all 0.2s ease
+				&:focus
+					box-shadow: -2px -2px 1px 0 $color-secondary-dark
+					outline: none
+
+section#results
+	div.container
+		div#images
+			width: 1200px
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-around
+			margin: 2rem 0
+			border: 2px solid $color-main-light
+			border-radius: 0.8rem
+			position: relative
+			&.search
+				height: 20rem
+			> a
+				display: block
+				width: calc(50% - 2rem)
+				margin: 1rem
+				border-radius: 0.8rem
+				border: 1px solid $color-main-dark
+				cursor: pointer
+				transition: all 0.3s ease
+				&:hover
+					box-shadow: 0 0 0.8rem 0 $color-main-dark
+				img
+					width: 100%
+					height: 100%
+					border-radius: 0.8rem
+
+// Animations
+@keyframes fadeIn
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+.fadeIn
+	animation: fadeIn ease 1s
+
+// Some adaptive layout
+@media (max-width: 1250px)
+	section#nav form#options
+		width: auto
+		padding: 2rem
+	section#results
+		width: 99%
+		margin: 0 auto
+		div.container
+			width: auto
+			div#images
+				width: auto
+
+@media (max-width: 700px)
+	section#nav form#options
+		flex-direction: column
+		input#query
+			width: 15rem
+			margin-bottom: 1.5rem
+	section#results div.container div#images > a
+			width: calc(100% - 2rem)
+
+

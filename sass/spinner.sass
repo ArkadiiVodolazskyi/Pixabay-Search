@@ -1,0 +1,71 @@
+// out: ../css/
+
+$animTime: 2.5s
+$waveSmUp: -15px
+$waveSmDn: 5px
+$waveLgUp: -25px
+$waveLgDn: -5px
+
+span.spinner
+	display: inline-block
+	width: 50px
+	height: 50px
+	position: absolute
+	transform-origin: center
+	left: 50%
+	top: 18rem
+	transform: translate(-50%, -50%)
+	box-sizing: border-box
+	background-color: #eee
+	border-radius: 100%
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+	&:before,
+	&:after
+		position: absolute
+		box-sizing: border-box
+		content: ""
+
+.v1
+	animation: baseRotate $animTime linear infinite
+	&:before
+		top: $waveSmDn
+		left: 50%
+		transform: translateX(-50%)
+		transform-origin: 0 25px
+		background-color: transparent
+		border-radius: 100%
+		border: 5px solid #2980b9
+		animation: waveSmall $animTime/2 linear infinite
+	&:after
+		bottom: $waveLgDn
+		left: 50%
+		transform: translateX(-50%)
+		background-color: transparent
+		border-radius: 100%
+		border: 5px solid #2980b9
+		animation: waveLarge $animTime/4 linear infinite
+
+@keyframes baseRotate
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+@keyframes waveSmall
+	0%
+		top: $waveSmDn
+	50%
+		top: $waveSmUp
+	100%
+		top: $waveSmDn
+
+@keyframes waveLarge
+	0%
+		bottom: $waveLgDn
+	50%
+		bottom: $waveLgUp
+	100%
+		bottom: $waveLgDn

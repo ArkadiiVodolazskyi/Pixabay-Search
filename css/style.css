@@ -1,0 +1,189 @@
+html, body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+html *, body * {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+section#nav {
+  -webkit-box-shadow: 0 2px 5px 0 #555;
+          box-shadow: 0 2px 5px 0 #555;
+  background-color: #008080;
+}
+
+section#nav form#options {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 0;
+}
+
+section#nav form#options input#query {
+  width: 25rem;
+  padding: 0.9rem;
+  border: 2px solid transparent;
+  -webkit-border-radius: 0.4rem;
+          border-radius: 0.4rem;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+section#nav form#options input#query:focus {
+  -webkit-box-shadow: -2px -2px 1px 0 #555;
+          box-shadow: -2px -2px 1px 0 #555;
+  outline: none;
+}
+
+section#nav form#options #selectWrapper label {
+  font-weight: 500;
+  color: #eee;
+}
+
+section#nav form#options #selectWrapper select#itemsCount {
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  -webkit-border-radius: 0.4rem;
+          border-radius: 0.4rem;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+section#nav form#options #selectWrapper select#itemsCount:focus {
+  -webkit-box-shadow: -2px -2px 1px 0 #555;
+          box-shadow: -2px -2px 1px 0 #555;
+  outline: none;
+}
+
+section#results div.container div#images {
+  width: 1200px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  margin: 2rem 0;
+  border: 2px solid #008080;
+  -webkit-border-radius: 0.8rem;
+          border-radius: 0.8rem;
+  position: relative;
+}
+
+section#results div.container div#images.search {
+  height: 20rem;
+}
+
+section#results div.container div#images > a {
+  display: block;
+  width: -webkit-calc(50% - 2rem);
+  width: calc(50% - 2rem);
+  margin: 1rem;
+  -webkit-border-radius: 0.8rem;
+          border-radius: 0.8rem;
+  border: 1px solid #8A2BE2;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+section#results div.container div#images > a:hover {
+  -webkit-box-shadow: 0 0 0.8rem 0 #8A2BE2;
+          box-shadow: 0 0 0.8rem 0 #8A2BE2;
+}
+
+section#results div.container div#images > a img {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 0.8rem;
+          border-radius: 0.8rem;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn ease 1s;
+          animation: fadeIn ease 1s;
+}
+
+@media (max-width: 1250px) {
+  section#nav form#options {
+    width: auto;
+    padding: 2rem;
+  }
+  section#results {
+    width: 99%;
+    margin: 0 auto;
+  }
+  section#results div.container {
+    width: auto;
+  }
+  section#results div.container div#images {
+    width: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  section#nav form#options {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section#nav form#options input#query {
+    width: 15rem;
+    margin-bottom: 1.5rem;
+  }
+  section#results div.container div#images > a {
+    width: -webkit-calc(100% - 2rem);
+    width: calc(100% - 2rem);
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/spinner.css" />
+
+    <!-- Connect Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>3DLOOK Task - Pixabay Search</title>
+  </head>
+  <body>
+    <section id="nav">
+      <form id="options" class="container">
+        <input
+          type="text"
+          id="query"
+          placeholder="Start typing your query here"
+        />
+        <div id="selectWrapper">
+          <label for="itemsCount">Items per page:</label>
+          <select id="itemsCount">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </form>
+      <span class="spinner v1"></span>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <div id="images"></div>
+      </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
